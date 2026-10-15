@@ -43,7 +43,7 @@ Verify service health at `GET http://localhost:8000/health` (returns 200 when Mo
 pytest tests/ -v
 
 # Concurrency race conditions and endpoint smoke suite
-python3 test_core_and_concurrency.py && python3 smoke_test.py
+python3 tests/concurrency_test.py && python3 scripts/smoke_test.py
 ```
 
 Tests validate business rule boundaries (R1–R5), concurrency race safety (parallel punch-in, punch-out, and PATCH updates), index coverage (no COLLSCAN), and analytics correctness compared against an independent pure-Python oracle on an evaluation dataset.
