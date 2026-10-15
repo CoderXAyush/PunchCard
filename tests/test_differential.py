@@ -72,7 +72,8 @@ def test_department_summary(month, department):
 @pytest.mark.parametrize("month,limit,department", [
     ("2026-07", 1, None),           # top-1 only
     ("2026-07", 3, None),           # should include ties
-    ("2026-07", 10, None),          # default limit
+    ("2026-07", 6, None),           # tie straddling limit=6 cutoff (7 rows)
+    ("2026-07", 10, None),          # tie straddling limit=10 cutoff (11 rows)
     ("2026-07", 10, "Engineering"), # filtered by department
     ("2026-06", 5, None),           # different month
 ])

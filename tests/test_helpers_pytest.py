@@ -1,5 +1,6 @@
 """pytest helpers — run WITHOUT mongo (pure functions)."""
-import sys
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, ".")
 from datetime import datetime, timezone, timedelta
 from app.main import (

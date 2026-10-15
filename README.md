@@ -40,7 +40,7 @@ Verify service health at `GET http://localhost:8000/health` (returns 200 when Mo
 
 ```bash
 # Unit tests, differential testing vs Python oracle, and fuzzing
-pytest test_helpers_pytest.py tests/test_differential.py -v
+pytest tests/ -v
 
 # Concurrency race conditions and endpoint smoke suite
 python3 test_core_and_concurrency.py && python3 smoke_test.py

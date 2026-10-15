@@ -19,7 +19,9 @@ def half_up_4(x):
 
 
 class Oracle:
-    def __init__(self, db_name="attendance_eval", mongo_uri="mongodb://localhost:27017"):
+    def __init__(self, db_name=None, mongo_uri=None):
+        db_name = db_name or os.getenv("MONGO_DB", "attendance_eval")
+        mongo_uri = mongo_uri or os.getenv("MONGO_URI", "mongodb://localhost:27017")
         self.client = MongoClient(mongo_uri, tz_aware=True)
         self.db = self.client[db_name]
 
